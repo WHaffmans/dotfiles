@@ -14,7 +14,6 @@ filetype plugin indent on    " required
 
 syntax enable
 set background=dark
-colorscheme solarized
 
 set number
 set relativenumber

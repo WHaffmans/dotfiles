@@ -41,3 +41,5 @@ set tabstop=4
 set ruler
 set laststatus=2
 let g:airline_powerline_fonts = 1
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 10
+

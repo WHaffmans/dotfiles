@@ -3,12 +3,13 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'altercation/vim-colors-solarized'
 
-call vundle#end()            " required
+"call vundle#end()            " required
+
 filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 

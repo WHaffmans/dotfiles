@@ -20,12 +20,15 @@ colorscheme solarized
 
 set number
 set relativenumber
+
 set list
 set listchars=tab:▶\ ,trail:·,eol:¬,
+
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set ruler
 set laststatus=2
 let g:airline_powerline_fonts = 1
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 12
 set guioptions -=T
 set guioptions -=m
+set guioptions -=r

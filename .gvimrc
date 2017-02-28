@@ -26,9 +26,14 @@ set listchars=tab:▶\ ,trail:·,eol:¬,
 
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set ruler
-set laststatus=2
-let g:airline_powerline_fonts = 1
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 12
+
+let g:airline_powerline_fonts = 0 
+set guifont=DejaVu\ Sans\ Mono\ 12
+
 set guioptions -=T
 set guioptions -=m
 set guioptions -=r
+
+set laststatus=2
+set ttimeoutlen=50
+

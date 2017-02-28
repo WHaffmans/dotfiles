@@ -3,11 +3,11 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/willem/.oh-my-zsh
-
+source ~/.shell_prompt.sh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lukerandall"
+# ZSH_THEME="lukerandall"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -29,7 +29,7 @@ ZSH_THEME="lukerandall"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -82,4 +82,6 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
+#
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tmux="TERM=xterm-256color tmux"

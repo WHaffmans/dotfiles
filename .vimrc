@@ -14,12 +14,25 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax enable
+
 set background=dark
+set showcmd
+set cursorline
+set lazyredraw
+set showmatch
+set wildmenu
 
 set number
-set relativenumber
+set norelativenumber
 set list
 set listchars=tab:▶\ ,trail:·,eol:¬,
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set ruler
 set laststatus=2
+
+"Search
+set hlsearch
+set incsearch
+
+nnoremap <leader><space> :nohlsearch<CR>
+let mapleader=","

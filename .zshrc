@@ -86,4 +86,7 @@ export LC_CTYPE="en_US.UTF-8"
 # alias zshconfig="mate ~/.zshrc"
 #
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export EDITOR='vim'
 alias tmux="TERM=xterm-256color tmux"
+alias ls=ls\ --group-directories-first\ --color=always

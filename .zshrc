@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.config/composer/vendor/bin:/opt/anaconda/bin:$PATH
+export PATH=$HOME/bin:$HOME/.config/composer/vendor/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/home/willem/.oh-my-zsh
 #source ~/.shell_prompt.sh
@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux extract thefuck tmux emoji)
+plugins=(git archlinux extract thefuck tmux emoji fancy-ctrl-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,8 +61,9 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
+#export LANG="en_US.UTF-8"
+#export LC_CTYPE="en_US.UTF-8"
+#export LC_ALL="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -88,5 +89,15 @@ export LC_CTYPE="en_US.UTF-8"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='vim'
+export BROWSER='one-surf.sh'
+export RTV_BROWSER='one-surf.sh'
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 alias tmux="TERM=xterm-256color tmux"
 alias ls=ls\ --group-directories-first\ --color=always

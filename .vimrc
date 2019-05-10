@@ -13,13 +13,16 @@ Bundle 'edkolev/promptline.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 
 filetype plugin indent on
 syntax enable
 
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 set mouse=a
 
 " set number
@@ -61,7 +64,7 @@ set wildmenu
 
 " airline
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='minimalist'
+" let g:airline_theme='luna'
 
 " netrw
 let g:netrw_banner=0        " disable annoying banner
@@ -70,3 +73,25 @@ let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+"        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+		highlight EndOfBuffer ctermfg=black
+    else
+        let s:hidden_all = 0
+"        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+		highlight EndOfBuffer ctermfg=12
+    endif
+endfunction
+
+call ToggleHiddenAll()
+nnoremap <Leader>h :call ToggleHiddenAll()<CR>

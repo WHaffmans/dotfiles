@@ -55,6 +55,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git archlinux extract thefuck tmux emoji fancy-ctrl-z)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # User configuration
 
@@ -91,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export BROWSER='one-surf.sh'
 export RTV_BROWSER='one-surf.sh'
+
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -98,6 +101,8 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+export SUDO_ASKPASS="$HOME/bin/dpass"
 
 alias tmux="TERM=xterm-256color tmux"
 alias ls=ls\ --group-directories-first\ --color=always

@@ -58,12 +58,12 @@ exec --no-startup-id urxvtd
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 500 -opacity "80" -bw 0 -bc $base01 -bg $base02 -fg "$base07" -hlbg "$base05" -font "System San Francisco Display 18" -hlfg "#9575cd"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -101,6 +101,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+Shift+w layout stacked
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -113,7 +114,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 
 # gaps
@@ -198,12 +199,15 @@ bindsym $mod+r mode "resize"
 
 # Widow Colours
 #                         border  background text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
+  client.focused          $base05 $base09    $base07 $base0A
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
   client.urgent           $base02 $base08    $base00 $base0F
 
 for_window [class="^.*"] border pixel 1
+for_window [class="Firefox"] resize set width 1150
+for_window [ title="QR-code" ] floating enable
+for_window [ title="QR-code" ] move position center
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -247,16 +251,26 @@ bindsym XF86TouchpadToggle exec ~/.i3/toggletouchpad.sh # toggle touchpad
 
 
 #lock i3
-bindsym $mod +Shift+x exec i3lock -c '#222222'
-bindsym $mod +m exec surf  https://web.whatsapp.com/
-bindsym $mod +g exec --no-startup-id ~/bin/one-surf.sh google.com 
-bindsym $mod +x exec firefox https://google.com/ 
-bindsym $mod +mod1+b exec --no-startup-id wallpaper-reddit --lottery 
-bindsym $mod +Shift+b exec --no-startup-id wallpaper-reddit --save
-bindsym $mod +b exec --no-startup-id wal -i ~/Pictures/Wallpapers -a 90 --backend colorz 
-# bindsym $mod +b exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
-bindsym $mod +n exec --no-startup-id wal --theme sexy-hund -a 90
-bindsym $mod +Shift+n exec --no-startup-id wal --theme sexy-euphrasia 
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
-exec --no-startup-id compton -D 5 -I 0.05 -O 0.01 -f -b --config ~/.config/compton/compton.conf
+bindsym $mod+Shift+x exec i3lock -c '#222222'
 
+bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Print exec scrot -u $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Shift+Print exec --no-startup-id scrot -s $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+y exec --no-startup-id youtube-dl $(xclip -o -selection clipboard)
+bindsym $mod+v exec --no-startup-id ~/bin/qr
+bindsym $mod+m exec surf  https://web.whatsapp.com/
+
+bindsym $mod+g exec --no-startup-id ~/bin/one-surf.sh google.com 
+bindsym $mod+x exec firefox
+
+bindsym $mod+b exec --no-startup-id wal -i ~/Pictures/Wallpapers -a 90 --backend colorz 
+bindsym $mod+mod1+b exec --no-startup-id wallpaper-reddit --lottery 
+bindsym $mod+Shift+b exec --no-startup-id wallpaper-reddit --save
+
+bindsym $mod+n exec --no-startup-id wal --theme ~/colors.json -a 90
+bindsym $mod+Shift+n exec --no-startup-id wal --theme sexy-euphrasia 
+
+exec --no-startup-id wal -a 90 --theme sexy-hund 
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
+
+exec --no-startup-id compton -D 5 -I 0.05 -O 0.01 -f -b --config ~/.config/compton/compton.conf
